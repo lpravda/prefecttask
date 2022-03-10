@@ -7,12 +7,13 @@ from prefect.core.task import Task
 class TaskDocumenter(FunctionDocumenter):
     """Document task definitions."""
 
-    objtype = 'task'
+    objtype = "task"
     member_order = 11
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
-        return isinstance(member, Task) and member.name == membername
+        return isinstance(member, Task)
+
 
 class TaskDirective(PyFunction):
     """Sphinx task directive."""
